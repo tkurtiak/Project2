@@ -1,0 +1,258 @@
+[rospy.client][INFO] 2019-10-01 17:29:33,375: init_node, name[/odomlistener_8418_1569965373298], pid[8418]
+[xmlrpc][INFO] 2019-10-01 17:29:33,375: XML-RPC server binding to 0.0.0.0:0
+[xmlrpc][INFO] 2019-10-01 17:29:33,376: Started XML-RPC server [http://ilya-VirtualBox:39887/]
+[rospy.impl.masterslave][INFO] 2019-10-01 17:29:33,376: _ready: http://ilya-VirtualBox:39887/
+[rospy.init][INFO] 2019-10-01 17:29:33,379: ROS Slave URI: [http://ilya-VirtualBox:39887/]
+[xmlrpc][INFO] 2019-10-01 17:29:33,385: xml rpc node: starting XML-RPC server
+[rospy.registration][INFO] 2019-10-01 17:29:33,385: Registering with master node http://localhost:11311
+[rospy.registration][INFO] 2019-10-01 17:29:33,385: Registering publisher topic [/bebop/cmd_vel] type [geometry_msgs/Twist] with master
+[rospy.registration][INFO] 2019-10-01 17:29:33,392: Registering publisher topic [/bebop/takeoff] type [std_msgs/Empty] with master
+[rospy.init][INFO] 2019-10-01 17:29:33,480: registered with master
+[rospy.rosout][INFO] 2019-10-01 17:29:33,480: initializing /rosout core topic
+[rospy.rosout][INFO] 2019-10-01 17:29:33,482: connected to core topic /rosout
+[rospy.simtime][INFO] 2019-10-01 17:29:33,484: /use_sim_time is not set, will not subscribe to simulated time [/clock] topic
+[rospy.internal][INFO] 2019-10-01 17:29:33,513: topic[/bebop/odom] adding connection to [http://ilya-VirtualBox:45497/], count 0
+[rospy.internal][INFO] 2019-10-01 17:29:33,624: topic[/bebop/takeoff] adding connection to [/bebop/bebop_driver], count 0
+[rospy.internal][INFO] 2019-10-01 17:29:33,625: topic[/bebop/cmd_vel] adding connection to [/bebop/bebop_driver], count 0
+[rospy.internal][INFO] 2019-10-01 17:29:33,732: topic[/rosout] adding connection to [/rosout], count 0
+[rosout][INFO] 2019-10-01 17:29:33,823: position: 
+  x: 0.0
+  y: 0.0
+  z: 0.0
+orientation: 
+  x: -0.00025507137427
+  y: 0.00189375695119
+  z: -0.0226123635188
+  w: 0.999742481662
+[rosout][INFO] 2019-10-01 17:29:34,019: position: 
+  x: 0.0
+  y: 0.0
+  z: 0.0
+orientation: 
+  x: -0.000251046740224
+  y: 0.00195986669832
+  z: -0.0226300866724
+  w: 0.999741954244
+[rosout][INFO] 2019-10-01 17:29:34,288: position: 
+  x: 0.0
+  y: 0.0
+  z: 0.0
+orientation: 
+  x: -0.000254887395325
+  y: 0.00190740561944
+  z: -0.0226366300042
+  w: 0.999741906603
+[rosout][INFO] 2019-10-01 17:29:34,424: position: 
+  x: 0.0
+  y: 0.0
+  z: 0.0
+orientation: 
+  x: -0.000414826095077
+  y: 0.00183146551536
+  z: -0.0226439931767
+  w: 0.999741828287
+[rosout][INFO] 2019-10-01 17:29:34,619: position: 
+  x: 0.0
+  y: 0.0
+  z: 0.0
+orientation: 
+  x: -0.000401458481881
+  y: 0.00172842791846
+  z: -0.0226307028269
+  w: 0.999742318129
+[rosout][INFO] 2019-10-01 17:29:34,823: position: 
+  x: 0.0
+  y: 0.0
+  z: 0.0
+orientation: 
+  x: -0.000434949535248
+  y: 0.00178174167023
+  z: -0.0226312415063
+  w: 0.999742198331
+[rosout][INFO] 2019-10-01 17:29:35,021: position: 
+  x: 0.0
+  y: 0.0
+  z: 0.0
+orientation: 
+  x: -0.000426396606
+  y: 0.00178931319354
+  z: -0.022624032908
+  w: 0.999742351648
+[rosout][INFO] 2019-10-01 17:29:35,292: position: 
+  x: 0.0
+  y: 0.0
+  z: 0.0
+orientation: 
+  x: -0.000428530771453
+  y: 0.00177613515359
+  z: -0.0226112526193
+  w: 0.999742663369
+[rosout][INFO] 2019-10-01 17:29:35,421: position: 
+  x: 0.0
+  y: 0.0
+  z: 0.0
+orientation: 
+  x: -0.000379230818321
+  y: 0.00170421517339
+  z: -0.0226157179072
+  w: 0.999742707469
+[rosout][INFO] 2019-10-01 17:29:35,625: position: 
+  x: 0.0
+  y: 0.0
+  z: 0.0
+orientation: 
+  x: -0.00044886069042
+  y: 0.0016565808852
+  z: -0.0226088727689
+  w: 0.999742913521
+[rosout][INFO] 2019-10-01 17:29:35,822: position: 
+  x: 0.0
+  y: 0.0
+  z: 0.0
+orientation: 
+  x: -0.000527670510777
+  y: 0.00173542694937
+  z: -0.0226074449829
+  w: 0.999742773562
+[rosout][INFO] 2019-10-01 17:29:36,018: position: 
+  x: 0.0
+  y: 0.0
+  z: 0.0
+orientation: 
+  x: -0.000553461369865
+  y: 0.00167239053311
+  z: -0.022632904053
+  w: 0.999742291015
+[rosout][INFO] 2019-10-01 17:29:36,291: position: 
+  x: 0.0
+  y: 0.0
+  z: 0.0
+orientation: 
+  x: -0.000498698014263
+  y: 0.00172633553303
+  z: -0.0226420379469
+  w: 0.999742021315
+[rosout][INFO] 2019-10-01 17:29:36,419: position: 
+  x: 0.0
+  y: 0.0
+  z: 0.0
+orientation: 
+  x: -0.000498873674077
+  y: 0.00177410809788
+  z: -0.0226585329641
+  w: 0.99974156388
+[rosout][INFO] 2019-10-01 17:29:36,623: position: 
+  x: 0.0
+  y: 0.0
+  z: 0.0
+orientation: 
+  x: -0.000541245618769
+  y: 0.00177491105908
+  z: -0.0226693756903
+  w: 0.999741294611
+[rosout][INFO] 2019-10-01 17:29:36,819: position: 
+  x: 0.0
+  y: 0.0
+  z: 0.0
+orientation: 
+  x: -0.000558764498489
+  y: 0.00182894677279
+  z: -0.0226769410629
+  w: 0.999741016004
+[rosout][INFO] 2019-10-01 17:29:37,021: position: 
+  x: 0.0
+  y: 0.0
+  z: 0.0
+orientation: 
+  x: -0.000487629552578
+  y: 0.00179560238649
+  z: -0.0227019354021
+  w: 0.999740546421
+[rosout][INFO] 2019-10-01 17:29:37,288: position: 
+  x: 0.0
+  y: 0.0
+  z: 0.0
+orientation: 
+  x: -0.000502970455413
+  y: 0.00179984785184
+  z: -0.0227122496894
+  w: 0.999740296918
+[rosout][INFO] 2019-10-01 17:29:37,424: position: 
+  x: 0.0
+  y: 0.0
+  z: 0.0
+orientation: 
+  x: -0.000496563338756
+  y: 0.00172774266365
+  z: -0.0227161937385
+  w: 0.999740337724
+[rosout][INFO] 2019-10-01 17:29:37,619: position: 
+  x: 0.0
+  y: 0.0
+  z: 0.0
+orientation: 
+  x: -0.000478565804933
+  y: 0.00168639990235
+  z: -0.0227095714672
+  w: 0.999740567544
+[rosout][INFO] 2019-10-01 17:29:37,818: position: 
+  x: 0.0
+  y: 0.0
+  z: 0.0
+orientation: 
+  x: -0.00051652044112
+  y: 0.00168798987527
+  z: -0.0226913155507
+  w: 0.999740960497
+[rosout][INFO] 2019-10-01 17:29:38,019: position: 
+  x: 0.0
+  y: 0.0
+  z: 0.0
+orientation: 
+  x: -0.000464352428856
+  y: 0.00171092329676
+  z: -0.0227012572014
+  w: 0.999740721407
+[rosout][INFO] 2019-10-01 17:29:38,285: position: 
+  x: 0.0
+  y: 0.0
+  z: 0.0
+orientation: 
+  x: -0.000494593244885
+  y: 0.0018112982246
+  z: -0.0227537855074
+  w: 0.999739335938
+[rosout][INFO] 2019-10-01 17:29:38,423: position: 
+  x: 0.0
+  y: 0.0
+  z: 0.0
+orientation: 
+  x: -0.000546004548997
+  y: 0.00183089425707
+  z: -0.0227534472243
+  w: 0.999739281185
+[rosout][INFO] 2019-10-01 17:29:38,619: position: 
+  x: 0.0
+  y: 0.0
+  z: 0.0
+orientation: 
+  x: -0.000473659924018
+  y: 0.00175943094111
+  z: -0.0227390163491
+  w: 0.999739774734
+[rosout][INFO] 2019-10-01 17:29:38,823: position: 
+  x: 0.0
+  y: 0.0
+  z: 0.0
+orientation: 
+  x: -0.000364532029064
+  y: 0.00180516405077
+  z: -0.0227352352267
+  w: 0.999739824944
+[rospy.core][INFO] 2019-10-01 17:29:38,995: signal_shutdown [signal-2]
+[rospy.internal][INFO] 2019-10-01 17:29:38,999: topic[/bebop/cmd_vel] removing connection to /bebop/bebop_driver
+[rospy.internal][INFO] 2019-10-01 17:29:39,000: topic[/rosout] removing connection to /rosout
+[rospy.internal][INFO] 2019-10-01 17:29:39,003: topic[/bebop/takeoff] removing connection to /bebop/bebop_driver
+[rospy.internal][INFO] 2019-10-01 17:29:39,004: topic[/bebop/odom] removing connection to http://ilya-VirtualBox:45497/
+[rospy.impl.masterslave][INFO] 2019-10-01 17:29:39,004: signal-2
+[rospy.core][INFO] 2019-10-01 17:29:39,122: signal_shutdown [atexit]
