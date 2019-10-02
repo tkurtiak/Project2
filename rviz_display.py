@@ -12,6 +12,7 @@ from bebop_msgs.msg import Ardrone3PilotingStateFlyingStateChanged
 from nav_msgs.msg import Odometry
 from geometry_msgs.msg import Pose
 from tf import transformations as tfs
+import tf
 
 
 from visualization_msgs.msg import Marker, MarkerArray
@@ -35,9 +36,9 @@ class bebop_display:
 
 
         rospy.Subscriber("/bebop/odom", Odometry, self.callback, "odom")
-        rospy.Subscriber("/auto/auto_drive", Auto_Driving_Msg, self.callback, "cmds")
-        rospy.Subscriber("/bebop/states/common/CommonState/BatteryStateChanged", CommonCommonStateBatteryStateChanged,self.callback, "battery")
-        rospy.Subscriber("/bebop/states/common/CommonState/WifiSignalChanged", CommonCommonStateWifiSignalChanged,self.callback, "wifi")
+        #rospy.Subscriber("/auto/auto_drive", Auto_Driving_Msg, self.callback, "cmds")
+        #rospy.Subscriber("/bebop/states/common/CommonState/BatteryStateChanged", CommonCommonStateBatteryStateChanged,self.callback, "battery")
+        #rospy.Subscriber("/bebop/states/common/CommonState/WifiSignalChanged", CommonCommonStateWifiSignalChanged,self.callback, "wifi")
         rospy.Subscriber("/auto/pose", Pose, self.callback,'vehicle_pos')
 
 
@@ -50,7 +51,7 @@ class bebop_display:
 
 
 
-    def create_markers():
+    def create_markers(self):
 
         self.vehicle_marker = MarkerArray()
         point_marker = Marker()
@@ -95,11 +96,11 @@ class bebop_display:
 
 
 
-    def callback(data,args):
+    def callback(self,data,args):
         if args == 'odom':
-            
-            quat = data.orientation
-            pos = data.position
+            print('working')
+            quat = data.pose.pose.orientation
+            pos = data.pose.pose.position
             
 
             # publishers for frame transforms 
@@ -111,15 +112,15 @@ class bebop_display:
 
         if args == 'point':
             
-            quat = data.orientation
-            pos = data.position
+            quat = data.pose.pose.orientation
+            pos = data.pose.pose.position
             
             self.tbr.sendTransform((pos.x,pos.y,pos.z),(quat.x,quat.y,quat.z,quat.w),rospy.get_rostime(),'point_frame', "odom")
             self.vichile_pub.publish(self.point_marker)
 
 
 
-        elif args == 'cmds'::
+        elif args == 'cmds':
             pass
 
 
