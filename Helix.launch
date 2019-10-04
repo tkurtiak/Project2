@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch> 
+<node pkg="bebop_driver" name="Helix" type="Helix.py" output="screen" />
+<node pkg="rviz" name="rviz" type="rviz" output="screen" />
+<node pkg="bebop_driver" name="rviz_display" type="rviz_display.py" output="screen" />	
+<node pkg="rosbag" name="record" type="record" args="record -o /home/ilya/bebop_ws/src/bebop_autonomy/bebop_driver/scripts/HELIX /bebop/odom /bebop/waypoint_ilya" />
+</launch>

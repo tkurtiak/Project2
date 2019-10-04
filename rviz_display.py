@@ -1,5 +1,8 @@
 #!/usr/bin/env python
 
+#NOTE TO INSTRUCTORS: This code largely written by Derek Thompson of team BRZ. He provded it to me as a template
+#I made some small changes 
+
 
 import rospy
 import signal
@@ -10,13 +13,14 @@ import time
 from std_msgs.msg import Int32, String, Float32MultiArray, Bool, Float32, Empty
 from bebop_msgs.msg import Ardrone3PilotingStateFlyingStateChanged
 from nav_msgs.msg import Odometry
-from geometry_msgs.msg import Pose
+from geometry_msgs.msg import Point
 from tf import transformations as tfs
 import tf
 
 
 from visualization_msgs.msg import Marker, MarkerArray
 
+global_point_data=Point()
 
 def signal_handler(_, __):
     # enable Ctrl+C of the script
@@ -39,7 +43,7 @@ class bebop_display:
         #rospy.Subscriber("/auto/auto_drive", Auto_Driving_Msg, self.callback, "cmds")
         #rospy.Subscriber("/bebop/states/common/CommonState/BatteryStateChanged", CommonCommonStateBatteryStateChanged,self.callback, "battery")
         #rospy.Subscriber("/bebop/states/common/CommonState/WifiSignalChanged", CommonCommonStateWifiSignalChanged,self.callback, "wifi")
-        rospy.Subscriber("/auto/pose", Pose, self.callback,'vehicle_pos')
+        rospy.Subscriber("/bebop/waypoint_ilya", Point, self.callback,'point')
 
 
         # Variables
@@ -97,8 +101,10 @@ class bebop_display:
 
 
     def callback(self,data,args):
+        global global_point_data
         if args == 'odom':
-            print('working')
+            #print('working')
+            #print(global_point_data)
             quat = data.pose.pose.orientation
             pos = data.pose.pose.position
             
@@ -111,11 +117,12 @@ class bebop_display:
 
 
         if args == 'point':
+            global_point_data=data
+            #quat = data.pose.pose.orientation
+            #print('point data recieved')
+            pos = data
             
-            quat = data.pose.pose.orientation
-            pos = data.pose.pose.position
-            
-            self.tbr.sendTransform((pos.x,pos.y,pos.z),(quat.x,quat.y,quat.z,quat.w),rospy.get_rostime(),'point_frame', "odom")
+            self.tbr.sendTransform((pos.x,pos.y,pos.z),(0,0,0,1),rospy.get_rostime(),'point_frame', "odom")
             self.vichile_pub.publish(self.point_marker)
 
 
