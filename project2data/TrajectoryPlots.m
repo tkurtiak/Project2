@@ -1,0 +1,84 @@
+% Import data using matlab csv function
+% Switch Output type to column vectors
+
+close all
+%% Helix
+idealX = cos([0:1:360]/180*pi)*1000;
+idealY = sin([0:1:360]/180*pi)*1000;
+idealZ = 500+[0:1:360]/360*1000;
+
+
+%% Load Text File with Odom/Waypoints
+% Helix
+% Load this manually: viconmounthuskydmc_3
+%[WP,Odom] = loadFile('Helix_ODOM.txt')
+% TZ = TZ + 500;
+% TY =  -TY;
+% TX =  -TX;
+
+% Diamond
+%[WP,Odom] = loadFile('Diamond_ODOM.txt')
+% Load this manually: viconmounthuskydmc_0
+% TZ = TZ + 0;
+% TY =  TY+600;
+% TX =  TX-700;
+
+% Stairstep
+% Load this manually: viconmounthuskydmc_2
+[WP,Odom] = loadFile('Stair_ODOM_crash.txt')
+TZ = TZ -200;
+TY =  TY+1800;
+TX =  -TX+2200;
+
+
+%%
+% Plot X-Y View
+ax1 = subplot(1,3,1)
+plot(TX,TY,'b') % VICON Trajectory
+hold on
+plot(Odom.X,Odom.Y,'r') % Odometry Telemetry 
+%plot(idealX,idealY,'k') % Ideal Trajectory
+plot(WP.X,WP.Y,'g') % Waypoint Trajectory
+
+ax1.XLabel.String = 'X Axis [mm]';
+ax1.YLabel.String = 'Y Axis [mm]';
+ax1.XGrid = 'on';
+ax1.YGrid = 'on';
+legend('Vicon','Odometry','Waypoints','Location','NorthWest','Orientation','horizontal');
+%legend('Vicon','Odometry','Ideal','Waypoints','Location','NorthWest','Orientation','horizontal');
+title('X-Y View','FontSize',16,'FontWeight','bold');
+
+% Plot X-Z View
+ax2 = subplot(1,3,2)
+plot(TX,TZ,'b')
+hold on
+plot(Odom.X,Odom.Z,'r') % Odometry Telemetry 
+%plot(idealX,idealZ,'k') % Ideal Trajectory
+plot(WP.X,WP.Z,'g') % Waypoint Trajectory
+
+ax2.XLabel.String = 'X Axis [mm]';
+ax2.YLabel.String = 'Z Axis [mm]';
+ax2.XGrid = 'on';
+ax2.YGrid = 'on';
+legend('Vicon','Odometry','Waypoints','Location','NorthWest','Orientation','horizontal');
+%legend('Vicon','Odometry','Ideal','Waypoints','Location','NorthWest','Orientation','horizontal');
+title('X-Z View','FontSize',16,'FontWeight','bold');
+
+% Plot Y-Z View
+ax3 = subplot(1,3,3)
+plot(TY,TZ,'b')
+hold on
+plot(Odom.Y,Odom.Z,'r') % Odometry Telemetry 
+%plot(idealY,idealZ,'k') % Ideal Trajectory
+plot(WP.Y,WP.Z,'g') % Waypoint Trajectory
+
+ax3.XLabel.String = 'Y Axis [mm]';
+ax3.YLabel.String = 'Z Axis [mm]';
+ax3.XGrid = 'on';
+ax3.YGrid = 'on';
+legend('Vicon','Odometry','Waypoints','Location','NorthWest','Orientation','horizontal');
+%legend('Vicon','Odometry','Ideal','Waypoints','Location','NorthWest','Orientation','horizontal');
+title('Y-Z View','FontSize',16,'FontWeight','bold');
+
+
+set(gcf, 'Position',  [100, 100, 1700, 400])
